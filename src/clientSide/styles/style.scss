@@ -42,14 +42,10 @@ body{
     width:calc((100% - 2*#{$grid-gutter})/3);
 }
 
-.col-1-of-7{
-    width:calc((100% - 6*#{$grid-gutter})/7);
-}
-
 .container{
     margin:7rem auto;
     max-width:90rem;
-    height:75vh;
+    height:60vh;
     background:#fff;
     box-shadow: 0 1rem 1.5rem rgba(0,0,0,.1);
     // filter: blur(2px);
@@ -62,6 +58,7 @@ body{
     &__bottom{
         padding: 0 4rem;
         height:50%;
+        position:relative;
     }
 }
 
@@ -79,7 +76,6 @@ body{
 }
 .location{
     font-size:1.6rem;
-
 }
 
 .other-detail{
@@ -90,38 +86,38 @@ body{
     }
 }
 
-.day-content{
-    text-align:center;
-    line-height: 12rem;
-    font-size:3rem;
-    height:12rem;
-    background:#eee;
-    margin-top:6rem;
-    transition:all .1s;
-    cursor:pointer;
-
-    &:hover{
-        transform:translateY(2px) scale(1.07);
-    }
-}
-
 .weather-icon{
     font-size:16rem;
 }
 
-.searchBtn{
+.searchForm{
     position:absolute;
     left:50%;
-    transform:translateX(-50%) translateY(1px) scale(1.05);
-    background:#eee;
+    top:50%;
+    transform:translate(-50%,-50%);
     text-align:center;
-    width:5rem;
-    height:5rem;
-    -webkit-clip-path: circle(50% at 49% 0);
-    clip-path: circle(50% at 49% 0);
-    cursor:pointer;
+    label{
+        display:block;
+        font-size:2.5rem;
+        margin-bottom:2rem;
+    }
+}
 
-    &:active{
-        transform: translateX(-50%) translateY(0) scale(1);
+.search{
+    border:1px solid #ddd;
+    padding:1rem 2rem;
+    border-radius: 100px;
+    font-size:1.6rem;
+    outline:none;
+
+    &:active,
+    &:focus{
+        box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    }
+
+    &::placeholder{
+        text-align:center;
+        font-size:1.8rem;
+        letter-spacing: 1px;
     }
 }
