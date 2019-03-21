@@ -21,7 +21,7 @@ const getGeocode = (location,callback) => {
 
 //callback inside the http request is must to get the data asynchronously
 
-const getWeather = (latitude,longitude,callback) => {
+const getWeather = (latitude,longitude,location,callback) => {
     const key = 'eb02821bfbfdb97bf9cf04ee0e2ea2a0';
     const url = `https://api.darksky.net/forecast/${key}/${latitude},${longitude}`
     
@@ -39,6 +39,7 @@ const getWeather = (latitude,longitude,callback) => {
                 dewPoint:body.currently.dewPoint,
                 uvIndex:body.currently.uvIndex,
                 visibility:body.currently.visibility,
+                location,
             })
         }
     })
